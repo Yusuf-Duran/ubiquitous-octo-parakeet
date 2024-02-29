@@ -8,6 +8,7 @@
   config = lib.mkIf config.programme.enable {
     environment.systemPackages = with pkgs; [
       vim
+      lazygit
       dconf
       firefox
       catppuccin-gtk
