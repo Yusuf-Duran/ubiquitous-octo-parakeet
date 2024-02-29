@@ -6,9 +6,14 @@
       ./main-user.nix
       ./font.nix
       ./programme.nix
+      ./login.nix
     ];
 
   nixpkgs.config.allowUnfree = true;
+
+  login.gdm.enable = true;
+
+  programs.hyprland.enable = true;
 
   font.enable = true;
 
