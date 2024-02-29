@@ -8,19 +8,16 @@
   config = lib.mkIf config.programme.enable {
     environment.systemPackages = with pkgs; [
       vim
+      vscode
       lazygit
       dconf
       firefox
       catppuccin-gtk
-      mako
-      grimblast
       wget
       curl
       git
       discord
       neovim
-      waybar
-      rofi-wayland
       kitty
       fish
       spotify
