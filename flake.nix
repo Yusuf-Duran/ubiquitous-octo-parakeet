@@ -34,6 +34,7 @@
             ./system/configuration.nix
             ./home/home.nix
             inputs.home-manager.nixosModules.default
+            nixos-hardware.nixosModules.microsoft-surface-pro-intel
           ];
         };
       };
