@@ -2,7 +2,7 @@
 
 
 
-{lib, config, pkgs, ..}:
+{lib, config, pkgs, ...}:
 {
   options = {
     programme.enable
@@ -14,6 +14,7 @@
       vim
       wget
       curl
+      git
       discord
       neovim
       waybar
@@ -21,7 +22,7 @@
       kitty
       fish
       spotify
-    ]
+    ];
   };
 
 }
