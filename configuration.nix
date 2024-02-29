@@ -18,6 +18,8 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  hardware.opengl.enable=true;
+
   main-user.enable = true;
   main-user.userName = "yusuf";
 

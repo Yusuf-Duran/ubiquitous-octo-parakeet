@@ -1,6 +1,19 @@
 { config, pkgs, ... }:
 
 {
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Catppuccin-Macchiato-Compact-Pink-Dark";
+      package = pkgs.catppuccin-gtk.override {
+        accents = [ "pink" ];
+        size = "compact";
+        tweaks = [ "rimless" "black" ];
+        variant = "macchiato";
+      };
+    };
+  };
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "yusuf";
@@ -44,8 +57,24 @@
       "col.shadow" = "rgba(00000099)";
     };
 
+    gestures = {
+      workspace_swipe = true;
+    };
+
+    misc = {
+      force_default_wallpaper = 0;
+    };
+
+    binds = {
+      workspace_back_and_forth = true;
+    };
+
     input = {
       kb_layout = "de";
+      natural_scroll = true;
+      touchpad = {
+        tap-to-click = true;
+      };
     };
 
     "$mod" = "SUPER";
@@ -59,6 +88,9 @@
 
     bind = [
       "$mod, Q, exec, kitty"
+      "$mod, R, exec, rofi -show drun"
+      "$mod, C, killactive"
+      "$mod SHIFT, S, exec, grimblast --freeze --notify copy area"
     ]
     ++ (
       builtins.concatLists (builtins.genList (
@@ -113,4 +145,11 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  xdg.configFile = {
+  "gtk-4.0/assets".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/assets";
+  "gtk-4.0/gtk.css".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/gtk.css";
+  "gtk-4.0/gtk-dark.css".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/gtk-dark.css";
+};
 }
+
