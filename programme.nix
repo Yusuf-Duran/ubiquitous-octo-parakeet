@@ -1,7 +1,3 @@
-
-
-
-
 {lib, config, pkgs, ...}:
 {
   options = {
