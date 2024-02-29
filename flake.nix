@@ -23,14 +23,16 @@
         default = nixpkgs.lib.nixosSystem {
           specialArgs = {inherit inputs;};
           modules = [ 
-            ./configuration.nix
+            ./system/configuration.nix
+            ./home/home.nix
             inputs.home-manager.nixosModules.default
           ];
         };
         surface = nixpkgs.lib.nixosSystem {
           specialArgs = {inherit inputs;};
           modules = [
-            ./configuration.nix
+            ./system/configuration.nix
+            ./home/home.nix
             inputs.home-manager.nixosModules.default
           ];
         };
