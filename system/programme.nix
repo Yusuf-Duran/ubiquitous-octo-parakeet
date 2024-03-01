@@ -9,6 +9,7 @@
     environment.systemPackages = with pkgs; [
       vim
       vscode
+      anki-bin
       lazygit
       dconf
       firefox

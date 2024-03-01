@@ -13,6 +13,8 @@
 
   login.gdm.enable = true;
 
+  services.thermald.enable = true;
+
   programs.hyprland.enable = true;
 
   font.enable = true;
