@@ -1,5 +1,9 @@
 {lib, config, pkgs, ... }:
 {
+  imports = [
+    ./rofi.nix
+  ];
+
   options = {
     hypr.enable
       = lib.mkEnableOption "enable hypr module";
@@ -10,10 +14,10 @@
       mako
       grimblast
       waybar
-      rofi-wayland
       kitty
     ];
 
+    rofi.enable = true;
 
     wayland.windowManager.hyprland.enable = true;
 
@@ -37,8 +41,8 @@
 
       input = {
         kb_layout = "de";
-        natural_scroll = true;
         touchpad = {
+          natural_scroll = true;
           tap-to-click = true;
         };
       };

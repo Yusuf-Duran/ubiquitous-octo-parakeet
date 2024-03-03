@@ -16,7 +16,7 @@
     users.users.${config.main-user.userName} = {
       isNormalUser = true;
       initialPassword = "12345";
-      extraGroups = ["wheel" "networkmanager"];
+      extraGroups = ["wheel" "networkmanager" "input" "audio"];
       description = "main user";
       shell = pkgs.fish;
     };
