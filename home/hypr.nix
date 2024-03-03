@@ -2,6 +2,7 @@
 {
   imports = [
     ./rofi.nix
+    ./kitty.nix
   ];
 
   options = {
@@ -14,10 +15,10 @@
       mako
       grimblast
       waybar
-      kitty
     ];
 
     rofi.enable = true;
+    kitty.enable = true;
 
     wayland.windowManager.hyprland.enable = true;
 
