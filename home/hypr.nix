@@ -23,8 +23,16 @@
 
     wayland.windowManager.hyprland.settings = {
       decoration = {
-        shadow_offset = "0 5";
-        "col.shadow" = "rgba(00000099)";
+      rounding = 10;
+      blur = {
+          enabled = true;
+          size = 3;
+          passes = 1;
+      };
+      drop_shadow = true;
+      shadow_range = 4;
+      shadow_render_power = 3;
+      "col.shadow" = "rgba(1a1a1aee)";
       };
 
       gestures = {
