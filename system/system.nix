@@ -7,6 +7,8 @@
       ./font.nix
       ./programme.nix
       ./login.nix
+      ./sounds.nix
+      ./bluetooth.nix
     ];
 
   nixpkgs.config.allowUnfree = true;
@@ -16,6 +18,10 @@
   services.thermald.enable = true;
 
   programs.hyprland.enable = true;
+
+  sounds.enable = true;
+
+  bluetooth.enable = true;
 
   font.enable = true;
 

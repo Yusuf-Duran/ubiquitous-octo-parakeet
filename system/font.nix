@@ -3,7 +3,6 @@
   options = {
     font.enable
       = lib.mkEnableOption "enable font module";
-    
   };
 
   config = lib.mkIf config.font.enable {
