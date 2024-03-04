@@ -3,6 +3,7 @@
   imports = [
     ./rofi.nix
     ./kitty.nix
+    ./mako.nix
   ];
 
   options = {
@@ -12,13 +13,13 @@
 
   config = lib.mkIf config.hypr.enable {
     home.packages = with pkgs; [
-      mako
       grimblast
       waybar
     ];
 
     rofi.enable = true;
     kitty.enable = true;
+    mako.enable = true;
 
     wayland.windowManager.hyprland.enable = true;
 
