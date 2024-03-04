@@ -1,4 +1,4 @@
-{lib, config, pkgs, ... }:
+{ lib, config, pkgs, ... }:
 {
   imports = [
     ./rofi.nix
@@ -7,8 +7,7 @@
   ];
 
   options = {
-    hypr.enable
-      = lib.mkEnableOption "enable hypr module";
+    hypr.enable = lib.mkEnableOption "enable hypr module";
   };
 
   config = lib.mkIf config.hypr.enable {
@@ -25,16 +24,16 @@
 
     wayland.windowManager.hyprland.settings = {
       decoration = {
-      rounding = 10;
-      blur = {
+        rounding = 10;
+        blur = {
           enabled = true;
           size = 3;
           passes = 1;
-      };
-      drop_shadow = true;
-      shadow_range = 4;
-      shadow_render_power = 3;
-      "col.shadow" = "rgba(1a1a1aee)";
+        };
+        drop_shadow = true;
+        shadow_range = 4;
+        shadow_render_power = 3;
+        "col.shadow" = "rgba(1a1a1aee)";
       };
 
       gestures = {
@@ -73,19 +72,23 @@
         "$mod SHIFT, S, exec, grimblast --freeze --notify copy area"
       ]
       ++ (
-        builtins.concatLists (builtins.genList (
-          x : let
-	    ws = let
-	      c = (x + 1) / 10;
-	    in 
-	      builtins.toString (x + 1 - (c * 10));
-	  in [
-	    "$mod, ${ws}, workspace, ${toString (x + 1)}"
-	    "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
-	  ]
-        )
-        10)
+        builtins.concatLists (builtins.genList
+          (
+            x:
+            let
+              ws =
+                let
+                  c = (x + 1) / 10;
+                in
+                builtins.toString (x + 1 - (c * 10));
+            in
+            [
+              "$mod, ${ws}, workspace, ${toString (x + 1)}"
+              "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
+            ]
+          )
+          10)
       );
     };
-    };
+  };
 } 

@@ -1,8 +1,7 @@
-{lib, config, pkgs, ... }: 
+{ lib, config, pkgs, ... }:
 {
   options = {
-    font.enable
-      = lib.mkEnableOption "enable font module";
+    font.enable = lib.mkEnableOption "enable font module";
   };
 
   config = lib.mkIf config.font.enable {

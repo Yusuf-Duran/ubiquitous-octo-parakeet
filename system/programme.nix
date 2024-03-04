@@ -1,8 +1,7 @@
-{lib, config, pkgs, ...}:
+{ lib, config, pkgs, ... }:
 {
   options = {
-    programme.enable
-      = lib.mkEnableOption "enable programme module"; 
+    programme.enable = lib.mkEnableOption "enable programme module";
   };
 
   config = lib.mkIf config.programme.enable {
@@ -11,6 +10,7 @@
       vscode
       anki-bin
       lazygit
+      nixpkgs-fmt
       dconf
       firefox
       catppuccin-gtk

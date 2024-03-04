@@ -28,18 +28,18 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  hardware.opengl.enable=true;
+  hardware.opengl.enable = true;
 
   main-user.enable = true;
   main-user.userName = "yusuf";
 
   programme.enable = true;
 
-  nix.settings.experimental-features = [ "nix-command" "flakes"];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   networking.hostName = "Yusuf-NixOS";
 
-  networking.networkmanager.enable = true;  
+  networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/Berlin";
 

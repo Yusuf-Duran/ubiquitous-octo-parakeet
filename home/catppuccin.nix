@@ -1,8 +1,7 @@
-{pkgs, lib, config, ...}:
+{ pkgs, lib, config, ... }:
 {
   options = {
-    catppuccin.enable
-      = lib.mkEnableOption "enable catppuccin module";
+    catppuccin.enable = lib.mkEnableOption "enable catppuccin module";
   };
 
   config = lib.mkIf config.catppuccin.enable {

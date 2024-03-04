@@ -1,12 +1,11 @@
-{lib, fetchFromGitHub, config, pkgs, ...}:
+{ lib, fetchFromGitHub, config, pkgs, ... }:
 {
   imports = [
     ./catppuccin.nix
   ];
 
   options = {
-    rofi.enable
-      = lib.mkEnableOption "enable rofi module";
+    rofi.enable = lib.mkEnableOption "enable rofi module";
   };
 
   config = lib.mkIf config.rofi.enable {

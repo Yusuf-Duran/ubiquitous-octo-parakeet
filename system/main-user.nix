@@ -1,9 +1,8 @@
-{lib, config, pkgs, ... }: 
+{ lib, config, pkgs, ... }:
 {
   options = {
-    main-user.enable
-      = lib.mkEnableOption "enable user module";
-    
+    main-user.enable = lib.mkEnableOption "enable user module";
+
     main-user.userName = lib.mkOption {
       default = "yusuf";
       description = ''
@@ -16,7 +15,7 @@
     users.users.${config.main-user.userName} = {
       isNormalUser = true;
       initialPassword = "12345";
-      extraGroups = ["wheel" "networkmanager" "input" "audio"];
+      extraGroups = [ "wheel" "networkmanager" "input" "audio" ];
       description = "main user";
       shell = pkgs.fish;
     };

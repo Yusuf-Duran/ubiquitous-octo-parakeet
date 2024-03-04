@@ -1,8 +1,7 @@
-{lib, fetchFromGitHub, config, pkgs, ...}:
+{ lib, config, pkgs, ... }:
 {
   options = {
-    kitty.enable
-      = lib.mkEnableOption "enable kitty module";
+    kitty.enable = lib.mkEnableOption "enable kitty module";
   };
 
   config = lib.mkIf config.kitty.enable {
