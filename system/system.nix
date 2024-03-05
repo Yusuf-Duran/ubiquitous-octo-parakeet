@@ -15,8 +15,6 @@
 
   login.gdm.enable = true;
 
-  services.thermald.enable = true;
-
   programs.hyprland.enable = true;
 
   sounds.enable = true;

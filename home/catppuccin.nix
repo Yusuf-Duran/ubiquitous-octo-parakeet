@@ -1,4 +1,5 @@
 { pkgs, lib, config, ... }:
+
 {
   options = {
     catppuccin.enable = lib.mkEnableOption "enable catppuccin module";

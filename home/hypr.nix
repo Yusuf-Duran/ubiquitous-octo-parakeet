@@ -23,6 +23,8 @@
     wayland.windowManager.hyprland.enable = true;
 
     wayland.windowManager.hyprland.settings = {
+      monitor = [ "eDP-1, preferred, auto, auto" ];
+
       decoration = {
         rounding = 10;
         blur = {
