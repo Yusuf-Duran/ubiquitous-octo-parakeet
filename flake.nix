@@ -18,18 +18,18 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-    
+
       nixosConfigurations = {
         default = nixpkgs.lib.nixosSystem {
-          specialArgs = {inherit inputs;};
-          modules = [ 
+          specialArgs = { inherit inputs; };
+          modules = [
             ./system/system.nix
             ./home/home.nix
             inputs.home-manager.nixosModules.default
           ];
         };
         surface = nixpkgs.lib.nixosSystem {
-          specialArgs = {inherit inputs;};
+          specialArgs = { inherit inputs; };
           modules = [
             ./system/system.nix
             ./home/home.nix
