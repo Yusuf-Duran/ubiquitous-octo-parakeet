@@ -4,6 +4,7 @@
     ./rofi.nix
     ./kitty.nix
     ./mako.nix
+    ./avizo.nix
   ];
 
   options = {
@@ -14,9 +15,9 @@
     home.packages = with pkgs; [
       grimblast
       waybar
-      avizo
     ];
 
+    avizo.enable = true;
     rofi.enable = true;
     kitty.enable = true;
     mako.enable = true;
