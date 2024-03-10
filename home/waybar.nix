@@ -13,7 +13,12 @@
         height = 30;
         modules-left = [ "hyprland/workspaces" ];
         modules-center = [ "clock" ];
-        modules-right = [ "battery" ];
+        modules-right = [ "backlight" "battery" ];
+        backlight = {
+          device = "intel_backlight";
+          format = "{icon} {percent}%";
+          format-icons = [ "" "" ];
+        };
       };
     };
     programs.waybar.style = ''
