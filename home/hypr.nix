@@ -5,6 +5,7 @@
     ./kitty.nix
     ./mako.nix
     ./avizo.nix
+    ./waybar.nix
   ];
 
   options = {
@@ -14,10 +15,10 @@
   config = lib.mkIf config.hypr.enable {
     home.packages = with pkgs; [
       grimblast
-      waybar
     ];
 
     avizo.enable = true;
+    waybar.enable = true;
     rofi.enable = true;
     kitty.enable = true;
     mako.enable = true;
