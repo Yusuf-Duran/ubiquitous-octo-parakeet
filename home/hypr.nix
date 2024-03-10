@@ -14,6 +14,7 @@
     home.packages = with pkgs; [
       grimblast
       waybar
+      avizo
     ];
 
     rofi.enable = true;
@@ -23,6 +24,11 @@
     wayland.windowManager.hyprland.enable = true;
 
     wayland.windowManager.hyprland.settings = {
+      exec-once = [
+        "waybar"
+        "avizo-service"
+      ];
+
       monitor = [ "eDP-1, preferred, auto, auto" ];
 
       decoration = {
@@ -65,6 +71,11 @@
         "$mod, mouse:272, movewindow"
         "$mod, mouse:273, resizewindow"
         "$mod ALT, mouse:272, resizewindow"
+      ];
+
+      binde = [
+        ", XF86AudioRaiseVolume, exec, volumectl -u up"
+        ", XF86AudioLowerVolume, exec, volumectl -u down"
       ];
 
       bind = [

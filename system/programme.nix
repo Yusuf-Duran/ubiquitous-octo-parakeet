@@ -10,6 +10,7 @@
       vscode
       anki-bin
       lazygit
+      libnotify
       nixpkgs-fmt
       dconf
       firefox
