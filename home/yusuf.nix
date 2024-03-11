@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
   imports = [
-    ./hypr.nix
+    ./hypr
     ./gtk.nix
   ];
 

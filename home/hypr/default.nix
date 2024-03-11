@@ -1,11 +1,11 @@
 { lib, config, pkgs, ... }:
 {
   imports = [
-    ./rofi.nix
-    ./kitty.nix
-    ./mako.nix
-    ./avizo.nix
-    ./waybar.nix
+    ../rofi.nix
+    ../kitty.nix
+    ../mako.nix
+    ../avizo.nix
+    ../waybar.nix
   ];
 
   options = {
@@ -15,6 +15,8 @@
   config = lib.mkIf config.hypr.enable {
     home.packages = with pkgs; [
       grimblast
+      hyprlock
+      hyprpaper
     ];
 
     avizo.enable = true;
@@ -25,10 +27,18 @@
 
     wayland.windowManager.hyprland.enable = true;
 
+    xdg.configFile = {
+      "hypr/hyprlock.conf".source = ./hyprlock.conf;
+
+      "hypr/hyprpaper.conf".source = ./hyprpaper.conf;
+      "hypr/wallpaper.png".source = ./wallpaper.png;
+    };
+
     wayland.windowManager.hyprland.settings = {
       exec-once = [
         "waybar"
         "avizo-service"
+        "hyprpaper"
       ];
 
       monitor = [ "eDP-1, preferred, auto, auto" ];
@@ -52,6 +62,7 @@
 
       misc = {
         force_default_wallpaper = 0;
+        disable_hyprland_logo = true;
       };
 
       binds = {
@@ -69,7 +80,6 @@
       "$mod" = "SUPER";
 
       bindm = [
-        # mouse movements
         "$mod, mouse:272, movewindow"
         "$mod, mouse:273, resizewindow"
         "$mod ALT, mouse:272, resizewindow"
@@ -84,6 +94,7 @@
         "$mod, Q, exec, kitty"
         "$mod, R, exec, rofi -show drun"
         "$mod, C, killactive"
+        "$mod, L, exec, hyprlock"
         "$mod SHIFT, S, exec, grimblast --freeze --notify copy area"
       ]
       ++ (
