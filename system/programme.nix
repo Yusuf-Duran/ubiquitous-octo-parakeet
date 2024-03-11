@@ -14,7 +14,6 @@
       nixpkgs-fmt
       dconf
       firefox
-      catppuccin-gtk
       wget
       curl
       git
