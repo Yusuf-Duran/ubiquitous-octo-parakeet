@@ -10,14 +10,28 @@
       mainbar = {
         layer = "top";
         position = "top";
-        height = 30;
         modules-left = [ "hyprland/workspaces" ];
         modules-center = [ "clock" ];
-        modules-right = [ "backlight" "battery" ];
+        modules-right = [ "backlight" "battery" "tray" ];
         backlight = {
           device = "intel_backlight";
           format = "{icon} {percent}%";
           format-icons = [ "" "" ];
+        };
+        tray = {
+          icon-size = 21;
+          spacing = 10;
+          show-passive-items = true;
+        };
+        battery = {
+          interval = 60;
+          states = {
+            warning = 30;
+            critical = 15;
+          };
+          format = "{capacity}% {icon}";
+          format-icons = [ "" "" "" "" "" ];
+          max-length = 100;
         };
       };
     };
@@ -53,19 +67,51 @@
       @define-color flamingo  #f2cdcd;
       @define-color rosewater #f5e0dc;
 
+      @keyframes flash {
+        0% { background-color: @red; }
+        50% { background-color: transparent; }
+        100% { background-color: @red; }
+      }
+
+      @keyframes charging {
+        0% { background-color: alpha(@teal, 0.6); }
+        50% { background-color: alpha(@teal, 0.4); }
+        100% { background-color: alpha(@teal, 0.6); }
+      }
+
+      @keyframes gradient-animation {
+        0% {
+          background-position: 0% 50%; /* Start position */
+        }
+        100% {
+          background-position: 100% 50%; /* End position */
+        }
+      }
+
+
       * {
         border: none;
         border-radius: 0;
         color: @text;
+        font-family: NotoSansM Nerd Font;
       }
+
       window#waybar {
-        background-color: shade (@base, 0.9);
+        background-color: shade(@base, 0.9);
         border: 2px solid alpha(@crust, 0.3);
         color: #AAB2BF;
       }
-      #workspaces button {
-        padding: 0 5px;
+
+      #battery.critical:not(.charging) {
+        background: linear-gradient(to right, @red, @maroon);
+        background-size: 200% auto; 
+        animation: gradient-animation 3s ease infinite; 
       }
+
+      #battery.charging {
+        animation: charging 5s infinite;
+      }
+
     '';
   };
 }
