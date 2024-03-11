@@ -23,6 +23,10 @@
 
   font.enable = true;
 
+  powerManagement.powertop.enable = true;
+
+  services.tlp.enable = true;
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
