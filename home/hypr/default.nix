@@ -41,9 +41,20 @@
         "waybar"
         "avizo-service"
         "hyprpaper"
+        "[ workspace special silent ] spotify"
       ];
 
       monitor = [ "eDP-1, preferred, auto, auto" ];
+
+      animations = {
+        enabled = true;
+        bezier = [
+          "simple, 0.16, 1, 0.3, 1"
+        ];
+        animation = [
+          "specialWorkspace, 1, 6, simple, slidevert"
+        ];
+      };
 
       decoration = {
         rounding = 10;
@@ -99,6 +110,8 @@
         "$mod, L, exec, hyprlock"
         "$mod SHIFT, S, exec, grimblast --freeze --notify copy area"
         "$mod, escape, exec, wlogout"
+        "$mod, U, togglespecialworkspace,"
+        "$mod SHIFT, U, movetoworkspace, special"
       ]
       ++ (
         builtins.concatLists (builtins.genList
