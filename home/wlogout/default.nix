@@ -1,14 +1,19 @@
 { lib, fetchFromGitHub, config, pkgs, ... }:
 {
-  imports = [
-    ./catppuccin.nix
-  ];
-
   options = {
     wlogout.enable = lib.mkEnableOption "enable wlogout module";
   };
 
   config = lib.mkIf config.wlogout.enable {
+    xdg.configFile = {
+      "wlogout/icons/hibernate.png".source = ./icons/hibernate.png;
+      "wlogout/icons/lock.png".source = ./icons/lock.png;
+      "wlogout/icons/logout.png".source = ./icons/logout.png;
+      "wlogout/icons/reboot.png".source = ./icons/reboot.png;
+      "wlogout/icons/shutdown.png".source = ./icons/shutdown.png;
+      "wlogout/icons/suspend.png".source = ./icons/suspend.png;
+    };
+
     programs.wlogout.enable = true;
     programs.wlogout.layout = [
       {
@@ -88,20 +93,48 @@
       window {
         background: @base;
       }
+
       button {
         background-color: @surface0;
         border-style: solid;
-        border-width: 1px;
+        border-width: 2px;
         background-repeat: no-repeat;
         background-position: center;
-        border-radius = 0.5rem;
-        margin: 5rem;
+        background-size: 35%;
+        border-radius: 10px;
+        margin: 10px;
       }
+
       button:focus, button:active, button:hover {
         background-color: alpha(@surface2, 0.5);
+        border-width: 2px;
         border-color: @teal;
       }
       
+      #lock {
+        background-image: url("icons/lock.png");
+      }
+
+      #logout {
+        background-image: url("icons/logout.png");
+      }
+
+      #suspend {
+        background-image: url("icons/suspend.png");
+      }
+
+      #hibernate {
+        background-image: url("icons/hibernate.png");
+      }
+
+      #shutdown {
+        background-image: url("icons/shutdown.png");
+      }
+
+      #reboot {
+        background-image: url("icons/reboot.png");
+      }
+
     '';
   };
 }

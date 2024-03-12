@@ -25,7 +25,6 @@
     trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
   };
 
-
   sounds.enable = true;
 
   bluetooth.enable = true;
