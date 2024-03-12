@@ -41,9 +41,13 @@
         "waybar"
         "avizo-service"
         "hyprpaper"
+        "[ workspace special silent ] discord"
         "[ workspace special silent ] spotify"
       ];
 
+      windowrulev2 = [
+        "workspace special, silent, class:^(discord)$"
+      ];
       monitor = [ "eDP-1, preferred, auto, auto" ];
 
       animations = {
