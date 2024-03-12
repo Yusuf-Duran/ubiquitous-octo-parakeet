@@ -6,6 +6,7 @@
     ../mako.nix
     ../avizo.nix
     ../waybar.nix
+    ../wlogout
   ];
 
   options = {
@@ -24,6 +25,7 @@
     rofi.enable = true;
     kitty.enable = true;
     mako.enable = true;
+    wlogout.enable = true;
 
     wayland.windowManager.hyprland.enable = true;
 
@@ -96,6 +98,7 @@
         "$mod, C, killactive"
         "$mod, L, exec, hyprlock"
         "$mod SHIFT, S, exec, grimblast --freeze --notify copy area"
+        "$mod, escape, exec, wlogout"
       ]
       ++ (
         builtins.concatLists (builtins.genList
