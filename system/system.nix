@@ -13,6 +13,8 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  programs.wshowkeys.enable = true;
+
   login.gdm.enable = true;
 
   programs.hyprland = {
