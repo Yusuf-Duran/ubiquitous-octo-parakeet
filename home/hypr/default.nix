@@ -1,4 +1,7 @@
-{ lib, config, pkgs, ... }:
+{ lib, config, pkgs, inputs, ... }:
+let
+  hyprplugins = inputs.hyprland-plugins.packages.${pkgs.system};
+in
 {
   imports = [
     ../rofi.nix
@@ -27,7 +30,11 @@
     mako.enable = true;
     wlogout.enable = true;
 
-    wayland.windowManager.hyprland.enable = true;
+    wayland.windowManager.hyprland = {
+      enable = true;
+      plugins = with hyprplugins; [
+      ];
+    };
 
     xdg.configFile = {
       "hypr/hyprlock.conf".source = ./hyprlock.conf;
@@ -48,6 +55,7 @@
       windowrulev2 = [
         "workspace special, silent, class:^(discord)$"
       ];
+
       monitor = [ "eDP-1, preferred, auto, auto" ];
 
       animations = {
@@ -116,6 +124,7 @@
         "$mod, escape, exec, wlogout"
         "$mod, U, togglespecialworkspace,"
         "$mod SHIFT, U, movetoworkspace, special"
+        "$mod, F, fullscreen"
       ]
       ++ (
         builtins.concatLists (builtins.genList
