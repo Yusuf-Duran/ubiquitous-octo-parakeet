@@ -3,6 +3,7 @@
   imports = [
     ./hypr
     ./gtk.nix
+    ./spotify.nix
   ];
 
   hypr.enable = true;

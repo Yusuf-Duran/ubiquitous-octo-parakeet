@@ -21,7 +21,6 @@
       neovim
       kitty
       fish
-      spotify
       btop
     ];
   };
