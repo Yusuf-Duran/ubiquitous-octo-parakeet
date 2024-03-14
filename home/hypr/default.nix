@@ -48,12 +48,12 @@ in
         "waybar"
         "avizo-service"
         "hyprpaper"
-        "[ workspace special silent ] discord"
-        "[ workspace special silent ] spotify"
+        "[ workspace special discord silent ] discord"
+        "[ workspace special spotify silent ] spotify"
       ];
 
       windowrulev2 = [
-        "workspace special, silent, class:^(discord)$"
+        "workspace special discord, silent, class:^(discord)$"
       ];
 
       general = {
@@ -130,8 +130,10 @@ in
         "$mod, L, exec, hyprlock"
         "$mod SHIFT, S, exec, grimblast --freeze --notify copy area"
         "$mod, escape, exec, wlogout"
-        "$mod, U, togglespecialworkspace,"
-        "$mod SHIFT, U, movetoworkspace, special"
+        "$mod, U, togglespecialworkspace, discord"
+        "$mod, I, togglespecialworkspace, spotify"
+        "$mod SHIFT, U, movetoworkspace, discord"
+        "$mod SHIFT, I, movetoworkspace, spotify"
         "$mod, F, fullscreen"
         "$mod, T, togglesplit"
       ]
