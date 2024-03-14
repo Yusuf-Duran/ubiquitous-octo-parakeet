@@ -6,7 +6,6 @@
 
   config = lib.mkIf config.programme.enable {
     environment.systemPackages = with pkgs; [
-      vim
       vscode
       anki-bin
       lazygit
@@ -18,7 +17,6 @@
       curl
       git
       discord
-      neovim
       kitty
       fish
       btop
