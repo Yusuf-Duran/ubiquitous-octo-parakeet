@@ -56,6 +56,14 @@ in
         "workspace special, silent, class:^(discord)$"
       ];
 
+      general = {
+        layout = "dwindle";
+      };
+
+      dwindle = {
+        preserve_split = true;
+      };
+
       monitor = [ "eDP-1, preferred, auto, auto" ];
 
       animations = {
@@ -125,6 +133,7 @@ in
         "$mod, U, togglespecialworkspace,"
         "$mod SHIFT, U, movetoworkspace, special"
         "$mod, F, fullscreen"
+        "$mod, T, togglesplit"
       ]
       ++ (
         builtins.concatLists (builtins.genList
