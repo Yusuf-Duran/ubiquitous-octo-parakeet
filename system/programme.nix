@@ -22,6 +22,7 @@
       kitty
       fish
       btop
+      logseq
     ];
   };
 
