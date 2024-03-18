@@ -121,6 +121,8 @@ in
       binde = [
         ", XF86AudioRaiseVolume, exec, volumectl -u up"
         ", XF86AudioLowerVolume, exec, volumectl -u down"
+        ", XF86MonBrightnessUp, exec, lightctl up"
+        ", XF86MonBrightnessDown, exec, lightctl down"
       ];
 
       bind = [
