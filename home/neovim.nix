@@ -53,6 +53,10 @@
       };
     };
 
+    extraPlugins = with pkgs.vimPlugins; [
+      lazygit-nvim
+    ];
+
     viAlias = true;
     vimAlias = true;
     withNodeJs = true;
