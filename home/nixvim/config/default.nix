@@ -1,5 +1,6 @@
 {
   imports = [
     ./plugins
+    ./config.nix
   ];
 }

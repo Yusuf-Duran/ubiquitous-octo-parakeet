@@ -1,0 +1,7 @@
+{
+  plugins = {
+    hardtime = {
+      enable = true;
+    };
+  };
+}
