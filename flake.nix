@@ -24,9 +24,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    stylix.url = "github:danth/stylix";
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, spicetify-nix, ... }@inputs:
+  outputs = { self, nixpkgs, nixos-hardware, spicetify-nix, stylix, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};

@@ -6,7 +6,7 @@
 
   config = lib.mkIf config.sounds.enable {
     environment.systemPackages = with pkgs; [
-      pwvucontrol
+      #pwvucontrol
     ];
     security.rtkit.enable = true;
     services.pipewire = {

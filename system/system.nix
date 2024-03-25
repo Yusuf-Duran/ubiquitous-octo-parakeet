@@ -15,6 +15,8 @@
 
   programs.wshowkeys.enable = true;
 
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
   login.gdm.enable = true;
 
   programs.hyprland = {

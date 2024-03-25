@@ -8,11 +8,13 @@
     environment.systemPackages = with pkgs; [
       vscode
       anki-bin
+      ghc
       lazygit
       libnotify
       nixpkgs-fmt
       dconf
       firefox
+      swiProlog
       wget
       curl
       git
@@ -21,6 +23,8 @@
       fish
       btop
       logseq
+      openvpn
+      gnome.nautilus
     ];
   };
 
