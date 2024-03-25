@@ -1,4 +1,4 @@
-{ lib, config, pkgs, ... }:
+{ lib, config, ... }:
 {
   options = {
     avizo.enable = lib.mkEnableOption "enable avizo module";

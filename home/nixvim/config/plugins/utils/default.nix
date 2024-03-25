@@ -6,5 +6,6 @@
     ./indent-blankline.nix
     ./notify.nix
     ./nvim-autopairs.nix
+    ./which-key.nix
   ];
 }
