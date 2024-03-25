@@ -31,9 +31,17 @@
       barbecue = {
         enable = true;
       };
-      chadtree = {
+      neo-tree = {
         enable = true;
-        view.openDirection = "left";
+      };
+      staline = {
+        enable = true;
+      };
+      nvim-autopairs = {
+        enable = true;
+      };
+      auto-session = {
+        enable = true;
       };
       lsp = {
         enable = true;
@@ -50,6 +58,9 @@
           tsserver.enable = true; # typescript
           volar.enable = true; # vue
         };
+      };
+      notify = {
+        enable = true;
       };
     };
 
