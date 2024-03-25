@@ -1,0 +1,7 @@
+{
+  plugins = {
+    treesitter = {
+      enable = true;
+    };
+  };
+}

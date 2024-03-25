@@ -4,7 +4,7 @@
     ./hypr
     ./gtk.nix
     ./spotify.nix
-    ./neovim.nix
+    ./nixvim
   ];
 
   hypr.enable = true;

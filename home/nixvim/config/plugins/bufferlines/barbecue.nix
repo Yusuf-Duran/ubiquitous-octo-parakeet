@@ -1,0 +1,7 @@
+{
+  plugins = {
+    barbecue = {
+      enable = true;
+    };
+  };
+}

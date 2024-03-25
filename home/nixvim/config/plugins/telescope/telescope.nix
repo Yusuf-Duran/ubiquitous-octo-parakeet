@@ -1,0 +1,7 @@
+{
+  plugins = {
+    telescope = {
+      enable = true;
+    };
+  };
+}
