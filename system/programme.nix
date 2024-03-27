@@ -27,5 +27,4 @@
       gnome.nautilus
     ];
   };
-
 }
