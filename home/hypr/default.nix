@@ -50,6 +50,12 @@ in
         "hyprpaper"
         "[ workspace special discord silent ] discord"
         "[ workspace special spotify silent ] spotify"
+        "xprop - root - f _XWAYLAND_GLOBAL_OUTPUT_SCALE 32 c - set _XWAYLAND_GLOBAL_OUTPUT_SCALE 2"
+      ];
+
+      env = [
+        "GDK_SCALE,2"
+        "XCURSOR_SIZE,32"
       ];
 
       windowrulev2 = [
