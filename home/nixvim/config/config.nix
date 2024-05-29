@@ -1,6 +1,6 @@
 {
   config = {
-    options = {
+    opts = {
       number = true;
 
       # Set tabs to 2 spaces
