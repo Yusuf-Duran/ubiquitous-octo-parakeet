@@ -6,7 +6,9 @@
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
-    hyprland.url = "github:hyprwm/Hyprland";
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
@@ -25,12 +27,17 @@
     };
 
     stylix.url = "github:danth/stylix";
+
+    nur.url = "github:nix-community/NUR";
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, spicetify-nix, stylix, ... }@inputs:
+  outputs = { self, nixpkgs, nixos-hardware, spicetify-nix, stylix, nur, nix-vscode-extensions, ... }@inputs:
     let
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
+      pkgs = import nixpkgs {
+        system = "x86_64-linux";
+        config.allowUnfree = true;
+      };
     in
     {
       nixosConfigurations = {
@@ -39,6 +46,7 @@
           modules = [
             ./system/system.nix
             ./home/home.nix
+            inputs.nur.nixosModules.nur
             inputs.home-manager.nixosModules.default
           ];
         };
@@ -47,6 +55,7 @@
           modules = [
             ./system/system.nix
             ./home/home.nix
+            inputs.nur.nixosModules.nur
             inputs.home-manager.nixosModules.default
             nixos-hardware.nixosModules.microsoft-surface-pro-intel
           ];

@@ -6,7 +6,6 @@
 
   config = lib.mkIf config.programme.enable {
     environment.systemPackages = with pkgs; [
-      vscode
       anki-bin
       ghc
       lazygit

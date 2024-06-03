@@ -1,13 +1,15 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 {
   imports = [
     ./hypr
     ./gtk.nix
     ./spotify.nix
     ./nixvim
+    ./vscode.nix
   ];
 
   hypr.enable = true;
+  vscode.enable = true;
 
   home.username = "yusuf";
   home.homeDirectory = "/home/yusuf";
