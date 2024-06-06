@@ -6,10 +6,12 @@
     ./spotify.nix
     ./nixvim
     ./vscode.nix
+    ./firefox.nix
   ];
 
   hypr.enable = true;
   vscode.enable = true;
+  firefox.enable = true;
 
   home.username = "yusuf";
   home.homeDirectory = "/home/yusuf";
