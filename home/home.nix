@@ -6,5 +6,6 @@
     users = {
       "yusuf" = import ./yusuf.nix;
     };
+    backupFileExtension = "backup";
   };
 }
