@@ -1,6 +1,7 @@
 { lib, config, pkgs, inputs, ... }:
 let
   hyprplugins = inputs.hyprland-plugins.packages.${pkgs.system};
+  hyprspace = inputs.Hyprspace.packages.${pkgs.system}.Hyprspace;
 in
 {
   imports = [
@@ -32,7 +33,7 @@ in
 
     wayland.windowManager.hyprland = {
       enable = true;
-      plugins = with hyprplugins; [
+      plugins = [
       ];
     };
 
