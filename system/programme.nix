@@ -8,6 +8,7 @@
     environment.systemPackages = with pkgs; [
       anki-bin
       ghc
+      llvmPackages_18.clang-unwrapped
       lazygit
       libnotify
       nixpkgs-fmt
