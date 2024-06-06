@@ -12,7 +12,6 @@
       libnotify
       nixpkgs-fmt
       dconf
-      firefox
       swiProlog
       wget
       curl
