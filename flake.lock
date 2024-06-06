@@ -1,5 +1,25 @@
 {
   "nodes": {
+    "Hyprspace": {
+      "inputs": {
+        "hyprland": [
+          "hyprland"
+        ]
+      },
+      "locked": {
+        "lastModified": 1715376791,
+        "narHash": "sha256-QKecFhWAB7sagSE+FXztINDqYqLro2nYp94f+ZtE/f4=",
+        "owner": "KZDKM",
+        "repo": "Hyprspace",
+        "rev": "8049b2794ca19d49320093426677d8c2911e7327",
+        "type": "github"
+      },
+      "original": {
+        "owner": "KZDKM",
+        "repo": "Hyprspace",
+        "type": "github"
+      }
+    },
     "base16": {
       "inputs": {
         "fromYaml": "fromYaml"
@@ -770,6 +790,7 @@
     },
     "root": {
       "inputs": {
+        "Hyprspace": "Hyprspace",
         "home-manager": "home-manager",
         "hyprland": "hyprland",
         "hyprland-plugins": "hyprland-plugins",

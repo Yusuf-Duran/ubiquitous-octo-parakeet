@@ -14,6 +14,11 @@
       inputs.hyprland.follows = "hyprland";
     };
 
+    Hyprspace = {
+      url = "github:KZDKM/Hyprspace";
+      inputs.hyprland.follows = "hyprland";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -44,6 +49,7 @@
         default = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
           modules = [
+            { nixpkgs.overlays = [ nur.overlay ]; }
             ./system/system.nix
             ./home/home.nix
             inputs.nur.nixosModules.nur
