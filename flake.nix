@@ -27,7 +27,7 @@
     stylix.url = "github:danth/stylix";
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, spicetify-nix, stylix, ... }@inputs:
+  outputs = { self, nixpkgs, nixos-hardware, spicetify-nix, stylix, home-manager, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -50,6 +50,16 @@
             inputs.home-manager.nixosModules.default
             nixos-hardware.nixosModules.microsoft-surface-pro-intel
           ];
+        };
+      };
+      homeConfigurations = {
+        h2t = home-manager.lib.homeManagerConfiguration {
+            inherit pkgs;
+            extraSpecialArgs = { inherit inputs; };
+            modules = [
+              ./home/h2t.nix
+              # inputs.home-manager.homeModules.default
+            ];
         };
       };
     };
